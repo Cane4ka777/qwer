@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/*.go": {
+      "runtime": "@vercel/go"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",

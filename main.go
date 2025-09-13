@@ -6,12 +6,12 @@ import (
 	"net/http"
 	"os"
 
-	"qwer-api/server"
+	"qwer-api/api"
 )
 
 func serverMiddleware(mux *http.ServeMux) http.Handler {
 	// chain: rate limit -> json logger -> mux
-	return server.JsonLogger(server.RateLimit(120, mux))
+	return api.JsonLogger(api.RateLimit(120, mux))
 }
 
 func main() {
@@ -27,30 +27,30 @@ func main() {
 	mux.Handle("/", fs)
 
 	// API routes (primary)
-	mux.HandleFunc("/api", server.IndexHandler)
-	mux.HandleFunc("/api/", server.IndexHandler)
-	mux.HandleFunc("/api/band", server.BandHandler)
-	mux.HandleFunc("/api/members", server.MembersHandler)
-	mux.HandleFunc("/api/songs", server.SongsHandler)
-	mux.HandleFunc("/api/albums", server.AlbumsHandler)
-	mux.HandleFunc("/api/awards", server.AwardsHandler)
+	mux.HandleFunc("/api", api.IndexHandler)
+	mux.HandleFunc("/api/", api.IndexHandler)
+	mux.HandleFunc("/api/band", api.BandHandler)
+	mux.HandleFunc("/api/members", api.MembersHandler)
+	mux.HandleFunc("/api/songs", api.SongsHandler)
+	mux.HandleFunc("/api/albums", api.AlbumsHandler)
+	mux.HandleFunc("/api/awards", api.AwardsHandler)
 
 	// Aliases for compatibility
-	mux.HandleFunc("/server", server.IndexHandler)
-	mux.HandleFunc("/server/", server.IndexHandler)
-	mux.HandleFunc("/server/band", server.BandHandler)
-	mux.HandleFunc("/server/members", server.MembersHandler)
-	mux.HandleFunc("/server/songs", server.SongsHandler)
-	mux.HandleFunc("/server/albums", server.AlbumsHandler)
-	mux.HandleFunc("/server/awards", server.AwardsHandler)
+	mux.HandleFunc("/server", api.IndexHandler)
+	mux.HandleFunc("/server/", api.IndexHandler)
+	mux.HandleFunc("/server/band", api.BandHandler)
+	mux.HandleFunc("/server/members", api.MembersHandler)
+	mux.HandleFunc("/server/songs", api.SongsHandler)
+	mux.HandleFunc("/server/albums", api.AlbumsHandler)
+	mux.HandleFunc("/server/awards", api.AwardsHandler)
 
-	mux.HandleFunc("/docs", server.DocsHandler)
+	mux.HandleFunc("/docs", api.DocsHandler)
 
 	// Serve OpenAPI spec file under both paths
 	mux.HandleFunc("/openapi.yaml", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "openapi.yaml")
 	})
-	mux.HandleFunc("/openserver.yaml", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/openapi.yaml", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "openapi.yaml")
 	})
 

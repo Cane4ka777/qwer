@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: QWER Band API
+  version: 1.0.0
+  description: REST API for QWER band information
+servers:
+  - url: /
+paths:
+  /api:
+    get:
+      summary: API info
+      responses:
+        '200': { description: OK }
+  /api/band:
+    get:
+      summary: Get band info with members, discography, awards
+      responses:
+        '200': { description: OK }
+  /api/members:
+    get:
+      summary: List members
+      parameters:
+        - in: query
+          name: id
+          schema: { type: integer }
+        - in: query
+          name: name
+          schema: { type: string }
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: sort
+          schema: { type: string, enum: [name, stage_name] }
+        - in: query
+          name: page
+          schema: { type: integer, default: 1 }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 50 }
+      responses:
+        '200': { description: OK }
+  /api/albums:
+    get:
+      summary: List albums
+      parameters:
+        - in: query
+          name: id
+          schema: { type: integer }
+        - in: query
+          name: title
+          schema: { type: string }
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: sort
+          schema: { type: string, enum: [title, date] }
+        - in: query
+          name: page
+          schema: { type: integer, default: 1 }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 50 }
+      responses:
+        '200': { description: OK }
+  /api/songs:
+    get:
+      summary: List songs
+      parameters:
+        - in: query
+          name: id
+          schema: { type: integer }
+        - in: query
+          name: title
+          schema: { type: string }
+        - in: query
+          name: album
+          schema: { type: string }
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: sort
+          schema: { type: string, enum: [title, album, date] }
+        - in: query
+          name: page
+          schema: { type: integer, default: 1 }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 50 }
+      responses:
+        '200': { description: OK }
+  /api/awards:
+    get:
+      summary: List awards
+      parameters:
+        - in: query
+          name: year
+          schema: { type: integer }
+        - in: query
+          name: event
+          schema: { type: string }
+      responses:
+        '200': { description: OK }

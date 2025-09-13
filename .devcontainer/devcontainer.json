@@ -1,0 +1,16 @@
+{
+	"name": "QWER Band API",
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.21-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go",
+				"eamodio.gitlens"
+			]
+		}
+	},
+	"postCreateCommand": "go mod tidy"
+}

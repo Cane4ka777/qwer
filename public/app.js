@@ -5,6 +5,9 @@
   const mcount = $("mcount");
   const acount = $("acount");
   const scount = $("scount");
+  const versionEl = document.getElementById("api-version");
+  const yearEl = document.getElementById("year");
+  yearEl && (yearEl.textContent = new Date().getFullYear());
 
   async function pingAPI() {
     try {
@@ -13,6 +16,9 @@
       const data = await res.json();
       statusEl.textContent = "API Online";
       statusEl.classList.add("ok");
+      if (versionEl && data && data.data && data.data.version) {
+        versionEl.textContent = data.data.version;
+      }
     } catch (e) {
       statusEl.textContent = "API Offline";
       statusEl.classList.add("err");

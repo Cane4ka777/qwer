@@ -50,7 +50,7 @@ func main() {
 	mux.HandleFunc("/openapi.yaml", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "openapi.yaml")
 	})
-	mux.HandleFunc("/openapi.yaml", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/openserver.yaml", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "openapi.yaml")
 	})
 

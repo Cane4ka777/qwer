@@ -1,4 +1,4 @@
-package api
+package server
 
 // Member represents a band member
 type Member struct {

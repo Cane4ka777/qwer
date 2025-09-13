@@ -1,4 +1,4 @@
-package api
+package server
 
 // QWERBandData contains all the band information
 var QWERBandData = Band{

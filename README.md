@@ -31,7 +31,8 @@ go run main.go
 ## Todo
 
 - All Members fancam
-- Website
+- ~~Website~~
+- All qwer images
 
 ## License
 

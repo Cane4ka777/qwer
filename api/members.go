@@ -157,5 +157,16 @@ func MembersHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	paged := list[start:end]
 
-	json.NewEncoder(w).Encode(APIResponse{Success: true, Message: "Members retrieved", Data: paged})
+	response := APIResponse{
+		Success: true,
+		Message: "Members retrieved successfully",
+		Data:    paged,
+		Meta: map[string]interface{}{
+			"total":       len(QWERBandData.Members),
+			"page":        page,
+			"limit":       limit,
+			"total_pages": (len(QWERBandData.Members) + limit - 1) / limit,
+		},
+	}
+	json.NewEncoder(w).Encode(response)
 }

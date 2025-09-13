@@ -191,5 +191,16 @@ func SongsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	paged := list[start:end]
 
-	json.NewEncoder(w).Encode(APIResponse{Success: true, Message: "Songs retrieved", Data: paged})
+	response := APIResponse{
+		Success: true,
+		Message: "Songs retrieved successfully",
+		Data:    paged,
+		Meta: map[string]interface{}{
+			"total":       len(allSongs),
+			"page":        page,
+			"limit":       limit,
+			"total_pages": (len(allSongs) + limit - 1) / limit,
+		},
+	}
+	json.NewEncoder(w).Encode(response)
 }

